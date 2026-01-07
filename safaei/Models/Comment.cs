@@ -10,7 +10,7 @@ namespace safaei.Models
         public int CommentId { get; set; }
 
 
-        [Display(Name = "صفحه محصولات")]
+        //[Display(Name = "صفحه محصولات")]
         [Required(ErrorMessage = "لطفا{0}را وارد کنید")]
         public int PageId { get; set; }
 
