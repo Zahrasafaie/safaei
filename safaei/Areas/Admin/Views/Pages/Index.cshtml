@@ -1,0 +1,78 @@
+﻿@model IEnumerable<safaei.Models.Page>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PageGroup.GroupTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Visit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShowInSlider)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.CreatDate)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @if(item.ImageName=="no-photo.jpeg")
+                    {
+                        <img src="~/Images/Pages/l.jpeg" class="thumbnail" id="SettingImg" />                        
+                    }
+                    @if (item.ImageName != "no-photo.jpeg")
+                    {
+                        <img src="~/Images/Pages/@item.ImageName" class="thumbnail" id="SettingImg" />
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PageGroup.GroupTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Visit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShowInSlider)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatDate)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PageId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.PageId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PageId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
