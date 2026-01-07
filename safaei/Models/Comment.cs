@@ -23,9 +23,9 @@ namespace safaei.Models
 
 
 
-        [Display(Name = "ایمیل")]
+        [Display(Name = " Email ایمیل")]
         [Required(ErrorMessage = "لطفا{0}را وارد کنید")]
-        [MaxLength(200, ErrorMessage = "{0}نباید بیشتر از{1}کاراکترباشد")]
+        [MaxLength(150, ErrorMessage = "{0}نباید بیشتر از{1}کاراکترباشد")]
         public string Email { get; set; }
 
 
