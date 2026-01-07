@@ -15,7 +15,7 @@ namespace safaei.Models
 
 
 
-        [Display(Name = "آدرس")]
+        //[Display(Name = "آدرس")]
         [Required(ErrorMessage = "لطفا{0}را وارد کنید")]
         [MaxLength(300, ErrorMessage = "{0}نباید بیشتر از{1}کاراکترباشد")]
         public string addrees { get; set; }
